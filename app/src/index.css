@@ -1,0 +1,136 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  :root {
+    /* Style 1 — Modern / Minimal (default) */
+    --bg-primary: #F7F5F0;
+    --bg-dark: #0A0A0A;
+    --bg-card: #FFFFFF;
+    --bg-overlay: rgba(10,10,10,0.72);
+    --text-primary: #0A0A0A;
+    --text-secondary: #6B6560;
+    --text-light: #F7F5F0;
+    --text-gold: #C9A96E;
+    --border-subtle: #E8E4DC;
+    --border-gold: #C9A96E;
+    --border-dark: #2A2A2A;
+    --accent-gold: #C9A96E;
+    --accent-gold-hover: #D4B87A;
+    --accent-gold-dim: #8A7550;
+    --accent-emerald: #2D6A4F;
+    --error: #C44B4B;
+    --success: #4B8C6B;
+
+    /* Shadows — Style 1 */
+    --shadow-sm: 0 1px 3px rgba(0,0,0,0.06);
+    --shadow-md: 0 4px 16px rgba(0,0,0,0.08);
+    --shadow-lg: 0 12px 40px rgba(0,0,0,0.12);
+    --shadow-gold: 0 4px 24px rgba(201,169,110,0.25);
+
+    /* Transitions */
+    --transition-fast: all 0.2s cubic-bezier(0.4, 0, 0.2, 1);
+    --transition-base: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+    --transition-slow: all 0.5s cubic-bezier(0.4, 0, 0.2, 1);
+    --transition-smooth: all 0.6s cubic-bezier(0.22, 1, 0.36, 1);
+
+    /* Shadcn variables */
+    --background: 40 20% 96%;
+    --foreground: 0 0% 4%;
+    --card: 0 0% 100%;
+    --card-foreground: 0 0% 4%;
+    --popover: 0 0% 100%;
+    --popover-foreground: 0 0% 4%;
+    --primary: 0 0% 4%;
+    --primary-foreground: 40 20% 96%;
+    --secondary: 40 12% 92%;
+    --secondary-foreground: 0 0% 4%;
+    --muted: 40 12% 92%;
+    --muted-foreground: 30 5% 42%;
+    --accent: 40 12% 92%;
+    --accent-foreground: 0 0% 4%;
+    --destructive: 0 54% 54%;
+    --destructive-foreground: 0 0% 98%;
+    --border: 36 14% 90%;
+    --input: 36 14% 90%;
+    --ring: 38 38% 61%;
+    --radius: 0.5rem;
+    --sidebar-background: 0 0% 98%;
+    --sidebar-foreground: 240 5.3% 26.1%;
+    --sidebar-primary: 240 5.9% 10%;
+    --sidebar-primary-foreground: 0 0% 98%;
+    --sidebar-accent: 240 4.8% 95.9%;
+    --sidebar-accent-foreground: 240 5.9% 10%;
+    --sidebar-border: 220 13% 91%;
+    --sidebar-ring: 217.2 91.2% 59.8%;
+  }
+
+  .style-heritage {
+    /* Style 2 — Warm / Heritage */
+    --bg-primary: #F0EBE3;
+    --bg-dark: #1C1814;
+    --bg-card: #FAF7F2;
+    --bg-overlay: rgba(28,24,20,0.78);
+    --text-primary: #2C2420;
+    --text-secondary: #7A7169;
+    --text-light: #F0EBE3;
+    --text-gold: #B8860B;
+    --text-umber: #8B4513;
+    --border-subtle: #D9D2C8;
+    --border-gold: #8B4513;
+    --border-dark: #3D352E;
+    --accent-gold: #B8860B;
+    --accent-gold-hover: #A0522D;
+    --accent-gold-dim: #8B4513;
+    --accent-emerald: #2D6A4F;
+    --error: #B54A4A;
+    --success: #5A8A5A;
+
+    /* Shadows — Style 2 */
+    --shadow-sm: 0 1px 4px rgba(28,24,20,0.08);
+    --shadow-md: 0 4px 20px rgba(28,24,20,0.10);
+    --shadow-lg: 0 12px 48px rgba(28,24,20,0.14);
+    --shadow-gold: 0 4px 24px rgba(139,69,19,0.2);
+  }
+
+  html {
+    scroll-behavior: smooth;
+  }
+
+  body {
+    font-family: 'Inter', system-ui, sans-serif;
+    background-color: var(--bg-primary);
+    color: var(--text-primary);
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+  }
+
+  * {
+    @apply border-border;
+  }
+
+  /* Focus visible styles for accessibility */
+  :focus-visible {
+    outline: 2px solid var(--accent-gold);
+    outline-offset: 2px;
+  }
+
+  /* Reduced motion support */
+  @media (prefers-reduced-motion: reduce) {
+    *,
+    *::before,
+    *::after {
+      animation-duration: 0.01ms !important;
+      animation-iteration-count: 1 !important;
+      transition-duration: 0.01ms !important;
+      scroll-behavior: auto !important;
+    }
+  }
+}
+
+@layer utilities {
+  .text-balance {
+    text-wrap: balance;
+  }
+}
